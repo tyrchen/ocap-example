@@ -1,4 +1,4 @@
-defmodule Phoenix.DataCase do
+defmodule OcapTest.DataCase do
   @moduledoc """
   This module defines the setup for tests requiring
   access to the application's data layer.
@@ -16,20 +16,20 @@ defmodule Phoenix.DataCase do
 
   using do
     quote do
-      alias Phoenix.Repo
+      alias OcapTest.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import Phoenix.DataCase
+      import OcapTest.DataCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Phoenix.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(OcapTest.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Phoenix.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(OcapTest.Repo, {:shared, self()})
     end
 
     :ok

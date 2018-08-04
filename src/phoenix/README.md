@@ -1,4 +1,4 @@
-# Phoenix
+# OcapTest
 
 To start your Phoenix server:
 

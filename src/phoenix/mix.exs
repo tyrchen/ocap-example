@@ -1,9 +1,9 @@
-defmodule Phoenix.Mixfile do
+defmodule OcapTest.Mixfile do
   use Mix.Project
 
   def project do
     [
-      app: :phoenix,
+      app: :ocap_test,
       version: "0.0.1",
       elixir: "~> 1.4",
       elixirc_paths: elixirc_paths(Mix.env),
@@ -19,7 +19,7 @@ defmodule Phoenix.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Phoenix.Application, []},
+      mod: {OcapTest.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end

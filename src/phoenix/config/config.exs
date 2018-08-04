@@ -6,15 +6,15 @@
 use Mix.Config
 
 # General application configuration
-config :phoenix,
-  ecto_repos: [Phoenix.Repo]
+config :ocap_test,
+  ecto_repos: [OcapTest.Repo]
 
 # Configures the endpoint
-config :phoenix, PhoenixWeb.Endpoint,
+config :ocap_test, OcapTestWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "y+QTN4xK2SvQMoBY6Fn6D40d56zsAqhJsD0l0+kBHmy+9Rt9txoDEoB5HLN6MBBQ",
-  render_errors: [view: PhoenixWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Phoenix.PubSub,
+  secret_key_base: "XUczW+yfmFDiqDY+3aete2spe1shWRA+P4mBj+DzApHCkdN04k9Q+c7LTHhWEakX",
+  render_errors: [view: OcapTestWeb.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: OcapTest.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
