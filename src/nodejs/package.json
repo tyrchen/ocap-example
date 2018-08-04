@@ -1,0 +1,23 @@
+{
+  "name": "ocap-example",
+  "version": "1.0.0",
+  "description": "Example code to play with ocap service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tyrchen/ocap-example.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tyrchen/ocap-example/issues"
+  },
+  "homepage": "https://github.com/tyrchen/ocap-example#readme",
+  "dependencies": {
+    "graphql-request": "^1.8.0",
+    "phoenix-channels": "^1.0.0"
+  }
+}
