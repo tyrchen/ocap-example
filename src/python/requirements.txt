@@ -1,15 +1,1 @@
-from graphqlclient import GraphQLClient
-
-client = GraphQLClient('http://graphql-swapi.parseapp.com/')
-
-result = client.execute('''
-{
-  allFilms {
-    films {
-      title
-    }
-  }
-}
-''')
-
-print(result)
+GraphQLClient

@@ -1,8 +1,8 @@
 create_env:
-	@pip install virtualenv
-	@pip install virtualenvwrapper
+	@pip3 install virtualenv
+	@pip3 install virtualenvwrapper
 	( \
 		source /usr/local/bin/virtualenvwrapper.sh; \
 		mkvirtualenv ocap; \
-		pip install -r requirements.txt; \
+		pip3 install -r requirements.txt; \
 	)
