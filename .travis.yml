@@ -1,0 +1,29 @@
+language: elixir
+elixir: 1.6
+otp_release: 21.0
+branches:
+  only:
+    - master
+before_install:
+  - sudo apt-get install -y rpm2cpio wget
+  - nvm install 10
+install:
+  - epmd -daemon
+  - mix local.hex --force
+  - mix local.rebar --force
+script: make travis
+before_script: make travis-init
+before_deploy: make travis-deploy
+deploy:
+  - provider: releases
+    skip_cleanup: true
+    api_key:
+      secure: "lqF1uhVAA7rb6H68fOH2axj3i72EBdnk2wVYM7nTOMJc26TsGQ4IHg54ipY6grpw0H9GbnLe3lKkeKqe72ZXJuSFdHU9xRGKGntDx98hYUiiecaZw5MR+Bw20a/MYhbLahju2Wu+Px4drqk5C12px7PeB18touE8T/ePdvkVR4exYTQ89fSfwBJMXRUfF8v7ITmca/zcfheQ7E67Jkymz36jZ6kdL621A1TIj7DzWM3Yye/DJX59pGDkNQISVVvuc1KwOzA+P6Vjjew72r1naT2/N+3By4WHiKa59DV3m4+o2W02x3vA5x2Rl0yVtzJRbw9y71DU8nsWcr6uJEYlrrPlUfXeH0U9h/yi12lnhSKdYLN/Kmvh3FsJwSHZ/FfCqkBs8qvcS1phVQe0VTr745Vdr1x0mZj/g8VlL4UCCN6t1ZHLfJCMBYa+7u1r5dU9RwY0F9w+Cm5G5Ff43qcpDIU/54g8eD3bsQy00u1WvRrEyknOpqLhYjsszERdoacmrrc7RNASciV2rNFYJNknhi9K+a9RnuwD8rS26HaMG7TInh6dToHKlB6SlvJaHvQ0BWbV5Wk6C0sjo/SDJmMluul4XyaINVVaZXOxmImpU4cqlG8sXi2TCWcWj9K/eJNZYbHEwhognMbFJqPK5ROXyB0AHFt+SHE+XHXQ5OIIZa8="
+    file_glob: true
+    file: src/_build/releases/*
+    on:
+      repo: ArcBlock/arc-ocap-service
+      branch: master
+notifications:
+  slack:
+    secure:
