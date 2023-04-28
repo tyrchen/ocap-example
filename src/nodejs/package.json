@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/tyrchen/ocap-example#readme",
   "dependencies": {
-    "graphql-request": "^1.8.0",
+    "graphql-request": "^6.0.0",
     "phoenix-channels": "^1.0.0"
   }
 }
